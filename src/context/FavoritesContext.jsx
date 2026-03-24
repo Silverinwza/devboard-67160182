@@ -9,7 +9,7 @@ export function FavoritesProvider({ children }) {
 
   function toggleFavorite(postId) {
     setFavorites((prev) =>
-      prev.includes(postId)
+     (prev || []).includes(postId)
         ? prev.filter((id) => id !== postId)
         : [...prev, postId],
     );
