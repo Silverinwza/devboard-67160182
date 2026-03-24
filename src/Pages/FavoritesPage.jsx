@@ -7,7 +7,7 @@ function FavoritesPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    if (favorites.length === 0) return;
+    if (favorites?.length === 0) return;
 
     // ดึงเฉพาะโพสต์ที่ถูกใจ
     async function fetchFavoritePosts() {
@@ -23,7 +23,7 @@ function FavoritesPage() {
     fetchFavoritePosts();
   }, [favorites]);
 
-  if (favorites.length === 0) {
+  if (favorites?.length === 0) {
     return (
       <div
         style={{
@@ -52,7 +52,7 @@ function FavoritesPage() {
           paddingBottom: "0.5rem",
         }}
       >
-        ❤️ โพสต์ที่ถูกใจ ({favorites.length})
+        ❤️ โพสต์ที่ถูกใจ ({favorites?.length})
       </h2>
       {posts.map((post) => (
         <div
